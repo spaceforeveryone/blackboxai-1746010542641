@@ -51,19 +51,31 @@
   </header>
 
   <main class="container mx-auto px-6 py-16">
-    <nav class="mb-12 border-b border-[#f1ede6]">
-      <ul class="flex space-x-8 text-lg font-semibold text-[#381b0f]" role="tablist" aria-label="Main navigation tabs">
-        <li>
-          <button id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home" class="border-b-2 border-[#381b0f] pb-2 text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'home')">Home</button>
-        </li>
-        <li>
-          <button id="tab-menu" role="tab" aria-selected="false" aria-controls="panel-menu" class="border-b-2 border-transparent pb-2 hover:border-[#381b0f] hover:text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'menu')">Menu</button>
-        </li>
-        <li>
-          <button id="tab-reservasi" role="tab" aria-selected="false" aria-controls="panel-reservasi" class="border-b-2 border-transparent pb-2 hover:border-[#381b0f] hover:text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'reservasi')">Reservasi</button>
-        </li>
-      </ul>
-    </nav>
+      <nav class="mb-12 border-b border-[#f1ede6] relative">
+        <ul class="flex space-x-8 text-lg font-semibold text-[#381b0f]" role="tablist" aria-label="Main navigation tabs">
+          <li>
+            <button id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home" class="border-b-2 border-[#381b0f] pb-2 text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'home')">Home</button>
+          </li>
+          <li class="relative group">
+            <button id="tab-menu" role="tab" aria-selected="false" aria-controls="panel-menu" class="border-b-2 border-transparent pb-2 hover:border-[#381b0f] hover:text-[#381b0f] focus:outline-none flex items-center space-x-1" onclick="switchTab(event, 'menu')">
+              <span>Our Menu</span>
+              <i class="fas fa-caret-down text-sm"></i>
+            </button>
+            <!-- Dropdown menu -->
+            <ul class="absolute left-0 top-full mt-1 w-40 bg-[#381b0f] text-[#f1ede6] rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50" role="menu" aria-label="Our Menu Subcategories">
+              <li>
+                <button role="menuitem" class="block w-full text-left px-4 py-2 hover:bg-[#2c150a]" onclick="showMenuCategory('minuman')">Minuman</button>
+              </li>
+              <li>
+                <button role="menuitem" class="block w-full text-left px-4 py-2 hover:bg-[#2c150a]" onclick="showMenuCategory('makanan')">Makanan</button>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button id="tab-reservasi" role="tab" aria-selected="false" aria-controls="panel-reservasi" class="border-b-2 border-transparent pb-2 hover:border-[#381b0f] hover:text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'reservasi')">Reservasi</button>
+          </li>
+        </ul>
+      </nav>
 
     <!-- Home Tab -->
     <section id="panel-home" role="tabpanel" aria-labelledby="tab-home" class="fade-in">
@@ -96,50 +108,92 @@
 
     <!-- Menu Tab -->
     <section id="panel-menu" role="tabpanel" aria-labelledby="tab-menu" class="hidden">
-      <h2 class="text-3xl font-bold mb-6 text-[#381b0f]">Menu Lengkap</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Everyone (kopi susu gula aren)" class="w-full h-48 object-cover" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Everyone (kopi susu gula aren)</h3>
-            <p class="text-[#381b0f] font-semibold">Rp 20.000</p>
+      <div>
+        <!-- Minuman Category -->
+        <section id="menu-minuman" class="hidden">
+          <h2 class="text-3xl font-bold mb-6 text-[#381b0f]">Minuman</h2>
+          <!-- Espresso Based -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-3 text-[#381b0f]">Espresso Based</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Everyone (kopi susu gula aren)" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                  <h4 class="text-lg font-semibold text-[#381b0f] mb-2">Everyone (kopi susu gula aren)</h4>
+                  <p class="text-[#381b0f] font-semibold">Rp 20.000</p>
+                </div>
+              </div>
+              <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Honolulu (kopi susu kelapa)" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                  <h4 class="text-lg font-semibold text-[#381b0f] mb-2">Honolulu (kopi susu kelapa)</h4>
+                  <p class="text-[#381b0f] font-semibold">Rp 22.000</p>
+                </div>
+              </div>
+              <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=400&q=80" alt="Berrymuch (kopi susu strawberry)" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                  <h4 class="text-lg font-semibold text-[#381b0f] mb-2">Berrymuch (kopi susu strawberry)</h4>
+                  <p class="text-[#381b0f] font-semibold">Rp 22.000</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Honolulu (kopi susu kelapa)" class="w-full h-48 object-cover" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Honolulu (kopi susu kelapa)</h3>
-            <p class="text-[#381b0f] font-semibold">Rp 22.000</p>
+          <!-- Signature Coffee -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-3 text-[#381b0f]">Signature Coffee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Summertime (jeruk mint)" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                  <h4 class="text-lg font-semibold text-[#381b0f] mb-2">Summertime (jeruk mint)</h4>
+                  <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+                </div>
+              </div>
+              <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Dragonade (lemon & naga)" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                  <h4 class="text-lg font-semibold text-[#381b0f] mb-2">Dragonade (lemon & naga)</h4>
+                  <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+                </div>
+              </div>
+              <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ipear You (pir & sereh)" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                  <h4 class="text-lg font-semibold text-[#381b0f] mb-2">Ipear You (pir & sereh)</h4>
+                  <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=400&q=80" alt="Berrymuch (kopi susu strawberry)" class="w-full h-48 object-cover" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Berrymuch (kopi susu strawberry)</h3>
-            <p class="text-[#381b0f] font-semibold">Rp 22.000</p>
+          <!-- Non Coffee -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-3 text-[#381b0f]">Non Coffee</h3>
+            <p class="text-[#381b0f]">Coming soon...</p>
           </div>
-        </div>
-        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Summertime (jeruk mint)" class="w-full h-48 object-cover" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Summertime (jeruk mint)</h3>
-            <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+          <!-- Refresher -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-3 text-[#381b0f]">Refresher</h3>
+            <p class="text-[#381b0f]">Coming soon...</p>
           </div>
-        </div>
-        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Dragonade (lemon & naga)" class="w-full h-48 object-cover" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Dragonade (lemon & naga)</h3>
-            <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+          <!-- Fruit Blend -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-semibold mb-3 text-[#381b0f]">Fruit Blend</h3>
+            <p class="text-[#381b0f]">Coming soon...</p>
           </div>
-        </div>
-        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ipear You (pir & sereh)" class="w-full h-48 object-cover" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Ipear You (pir & sereh)</h3>
-            <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+          <!-- Mocktail -->
+          <div>
+            <h3 class="text-2xl font-semibold mb-3 text-[#381b0f]">Mocktail</h3>
+            <p class="text-[#381b0f]">Coming soon...</p>
           </div>
-        </div>
+        </section>
+
+        <!-- Makanan Category -->
+        <section id="menu-makanan" class="hidden">
+          <h2 class="text-3xl font-bold mb-6 text-[#381b0f]">Makanan</h2>
+          <h3 class="text-2xl font-semibold mb-3 text-[#381b0f]">Snack</h3>
+          <p class="text-[#381b0f]">Coming soon...</p>
+        </section>
       </div>
     </section>
 
@@ -287,6 +341,26 @@
       selectedPanel.classList.remove('hidden');
     }
 
+    function showMenuCategory(category) {
+      console.log('showMenuCategory called with:', category);
+      // Switch to Menu tab
+      const menuTab = document.getElementById('tab-menu');
+      menuTab.click();
+
+      // Hide all category sections
+      const minumanSection = document.getElementById('menu-minuman');
+      const makananSection = document.getElementById('menu-makanan');
+      minumanSection.classList.add('hidden');
+      makananSection.classList.add('hidden');
+
+      // Show selected category section
+      if (category === 'minuman') {
+        minumanSection.classList.remove('hidden');
+      } else if (category === 'makanan') {
+        makananSection.classList.remove('hidden');
+      }
+    }
+
     // Reservation form handler
     function handleReservation(event) {
       event.preventDefault();
@@ -294,6 +368,11 @@
       event.target.reset();
       return false;
     }
+
+    // Show minuman category by default when menu tab is clicked
+    document.getElementById('tab-menu').addEventListener('click', () => {
+      showMenuCategory('minuman');
+    });
   </script>
 </body>
 </html>
