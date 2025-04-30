@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Everyone - @spaceforeveryone_ Coffee Shop</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+</head>
+<body class="bg-[#f1ede6] text-[#381b0f]">
+  <header class="bg-[#381b0f] shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold text-[#f1ede6]">Everyone</h1>
+      <a
+        href="https://instagram.com/spaceforeveryone_"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[#f1ede6] hover:text-gray-300 font-semibold flex items-center space-x-2"
+        aria-label="Instagram @spaceforeveryone_"
+      >
+        <i class="fab fa-instagram fa-lg"></i>
+        <span>@spaceforeveryone_</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-16">
+    <nav class="mb-12 border-b border-[#f1ede6]">
+      <ul class="flex space-x-8 text-lg font-semibold text-[#381b0f]" role="tablist" aria-label="Main navigation tabs">
+        <li>
+          <button id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home" class="border-b-2 border-[#381b0f] pb-2 text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'home')">Home</button>
+        </li>
+        <li>
+          <button id="tab-menu" role="tab" aria-selected="false" aria-controls="panel-menu" class="border-b-2 border-transparent pb-2 hover:border-[#381b0f] hover:text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'menu')">Menu</button>
+        </li>
+        <li>
+          <button id="tab-reservasi" role="tab" aria-selected="false" aria-controls="panel-reservasi" class="border-b-2 border-transparent pb-2 hover:border-[#381b0f] hover:text-[#381b0f] focus:outline-none" onclick="switchTab(event, 'reservasi')">Reservasi</button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Home Tab -->
+    <section id="panel-home" role="tabpanel" aria-labelledby="tab-home" class="fade-in">
+      <div class="relative h-screen w-full rounded-lg overflow-hidden shadow-lg mb-12">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover brightness-75" playsinline>
+          <source src="https://cdn.pixabay.com/vimeo/458981812/coffee-shop-ambient-01-1080p-30fps-2-10000.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+          <h2 class="text-5xl font-extrabold text-[#f1ede6] drop-shadow-lg mb-4">Coffee, fruit, creative space</h2>
+          <p class="text-xl text-[#f1ede6] mb-8 max-w-2xl drop-shadow-md">Everyone adalah coffeeshop & ruang kolaborasi kreatif yang menyatukan rasa dan ide.</p>
+          <a href="#panel-menu" onclick="switchTab(event, 'menu')" class="inline-block bg-[#381b0f] text-[#f1ede6] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-gray-800 transition" aria-label="Lihat menu dan pesan sekarang">Lihat menu dan pesan sekarang</a>
+        </div>
+      </div>
+
+      <section class="mb-12">
+        <h3 class="text-3xl font-bold mb-6 text-[#381b0f]">Promo of the Month</h3>
+        <div class="bg-[#381b0f] p-6 rounded-lg shadow-md text-center text-[#f1ede6]">
+          <h4 class="text-2xl font-semibold mb-2">Diskon 20% untuk semua kopi susu!</h4>
+          <p class="mb-4">Nikmati promo spesial bulan ini hanya di Everyone.</p>
+          <a href="#panel-menu" onclick="switchTab(event, 'menu')" class="inline-block bg-[#f1ede6] text-[#381b0f] px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">Lihat Menu</a>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="text-3xl font-bold mb-6 text-[#381b0f]">Instagram Feed</h3>
+        <div class="grid grid-cols-3 gap-4">
+          <a href="https://instagram.com/p/CF1" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 1" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF2" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 2" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF3" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 3" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF4" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 4" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF5" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 5" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF6" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 6" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF7" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 7" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF8" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 8" class="rounded-lg object-cover w-full h-32" />
+          </a>
+          <a href="https://instagram.com/p/CF9" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Instagram feed 9" class="rounded-lg object-cover w-full h-32" />
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <!-- Menu Tab -->
+    <section id="panel-menu" role="tabpanel" aria-labelledby="tab-menu" class="hidden">
+      <h2 class="text-3xl font-bold mb-6 text-[#381b0f]">Menu Lengkap</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Everyone (kopi susu gula aren)" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Everyone (kopi susu gula aren)</h3>
+            <p class="text-[#381b0f] font-semibold">Rp 20.000</p>
+          </div>
+        </div>
+        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Honolulu (kopi susu kelapa)" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Honolulu (kopi susu kelapa)</h3>
+            <p class="text-[#381b0f] font-semibold">Rp 22.000</p>
+          </div>
+        </div>
+        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=400&q=80" alt="Berrymuch (kopi susu strawberry)" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Berrymuch (kopi susu strawberry)</h3>
+            <p class="text-[#381b0f] font-semibold">Rp 22.000</p>
+          </div>
+        </div>
+        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Summertime (jeruk mint)" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Summertime (jeruk mint)</h3>
+            <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+          </div>
+        </div>
+        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Dragonade (lemon & naga)" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Dragonade (lemon & naga)</h3>
+            <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+          </div>
+        </div>
+        <div class="bg-[#f1ede6] rounded-lg shadow-md overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ipear You (pir & sereh)" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-[#381b0f] mb-2">Ipear You (pir & sereh)</h3>
+            <p class="text-[#381b0f] font-semibold">Rp 18.000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservasi Tab -->
+    <section id="panel-reservasi" role="tabpanel" aria-labelledby="tab-reservasi" class="hidden">
+      <div class="flex flex-col md:flex-row items-center md:items-start rounded-lg overflow-hidden shadow-lg mb-12 space-y-6 md:space-y-0 md:space-x-8">
+        <div class="w-full md:w-1/2 h-64 md:h-auto relative rounded-lg overflow-hidden shadow-lg">
+          <video autoplay muted loop class="w-full h-full object-cover brightness-75" playsinline>
+            <source src="https://cdn.pixabay.com/vimeo/458981812/meeting-room-ambient-01-1080p-30fps-2-10000.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="w-full md:w-1/2 px-6 text-[#381b0f]">
+          <h2 class="text-4xl font-extrabold mb-4">Reservasi Ruang Meeting</h2>
+          <p class="mb-2">Fasilitas:</p>
+          <ul class="list-disc list-inside mb-4 max-w-md">
+            <li>Ruangan full AC</li>
+            <li>Smart TV</li>
+            <li>Sound and mic</li>
+            <li>Projector dan layar</li>
+          </ul>
+          <p class="mb-4 font-semibold">Kapasitas: 25 orang</p>
+          <p class="mb-8 font-semibold">Harga: Rp 50.000/pack</p>
+        </div>
+      </div>
+
+      <section class="mb-12">
+        <h3 class="text-3xl font-bold mb-6 text-[#381b0f]">Menu Packages</h3>
+        <ul class="list-disc list-inside space-y-2 max-w-md text-[#381b0f]">
+          <li>Package A: Kopi + Snack - Rp 50.000</li>
+          <li>Package B: Kopi + Buah Segar - Rp 60.000</li>
+          <li>Package C: Buah Segar + Minuman Segar - Rp 55.000</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-3xl font-bold mb-6 text-[#381b0f]">Form Reservasi</h3>
+        <form class="max-w-md space-y-4" onsubmit="return handleReservation(event)">
+          <div>
+            <label for="name" class="block text-[#381b0f] font-semibold mb-1">Nama</label>
+            <input type="text" id="name" name="name" required class="w-full border border-[#381b0f] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#381b0f]" />
+          </div>
+          <div>
+            <label for="date" class="block text-[#381b0f] font-semibold mb-1">Tanggal</label>
+            <input type="date" id="date" name="date" required class="w-full border border-[#381b0f] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#381b0f]" />
+          </div>
+          <div>
+            <label for="time" class="block text-[#381b0f] font-semibold mb-1">Jam</label>
+            <input type="time" id="time" name="time" required class="w-full border border-[#381b0f] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#381b0f]" />
+          </div>
+          <div>
+            <label for="duration" class="block text-[#381b0f] font-semibold mb-1">Durasi (jam)</label>
+            <input type="number" id="duration" name="duration" min="1" max="8" required class="w-full border border-[#381b0f] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#381b0f]" />
+          </div>
+          <div>
+            <label for="whatsapp" class="block text-[#381b0f] font-semibold mb-1">Nomor WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" pattern="\\+?\\d{10,15}" placeholder="+62xxxxxxxxxx" required class="w-full border border-[#381b0f] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#381b0f]" />
+          </div>
+          <div>
+            <label class="block text-[#381b0f] font-semibold mb-1">List Pesanan Menu</label>
+            <div class="space-y-2">
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="menuOrder" value="Package A" class="form-checkbox text-[#381b0f]" />
+                <span class="ml-2">Package A: Kopi + Snack</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="menuOrder" value="Package B" class="form-checkbox text-[#381b0f]" />
+                <span class="ml-2">Package B: Kopi + Buah Segar</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="menuOrder" value="Package C" class="form-checkbox text-[#381b0f]" />
+                <span class="ml-2">Package C: Buah Segar + Minuman Segar</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="bg-[#381b0f] text-[#f1ede6] px-6 py-3 rounded font-semibold hover:bg-gray-800 transition">Kirim Reservasi</button>
+        </form>
+      </section>
+
+      <section class="mt-12">
+        <h3 class="text-3xl font-bold mb-6 text-[#381b0f]">Testimoni Pelanggan</h3>
+        <div class="space-y-6 max-w-xl">
+          <blockquote class="p-6 border-l-4 border-[#381b0f] italic text-[#381b0f] bg-[#f1ede6] rounded shadow">
+            “Tempatnya cozy banget buat kerja bareng tim. Minumannya juga unik dan segar!”<br />
+            <span class="font-semibold">— Sean Richard</span>
+          </blockquote>
+          <blockquote class="p-6 border-l-4 border-[#381b0f] italic text-[#381b0f] bg-[#f1ede6] rounded shadow">
+            “Konsep sehat dan kreatif, akhirnya ada tempat kayak gini di kota.”<br />
+            <span class="font-semibold">— Aidi Abdurrahman</span>
+          </blockquote>
+          <blockquote class="p-6 border-l-4 border-[#381b0f] italic text-[#381b0f] bg-[#f1ede6] rounded shadow">
+            “This place really exceeded my expectations!! Such a welcoming place, making it a perfect spot to do my work done or catch up with friends.”<br />
+            <span class="font-semibold">— Christina Novita Apriliana Pascha Ahen</span>
+          </blockquote>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="bg-[#381b0f] border-t border-[#381b0f] py-6">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[#f1ede6] text-sm space-y-6 md:space-y-0">
+      <div class="mb-4 md:mb-0 max-w-md">
+        <p>Alamat: Jl. Karna Sosial (samping Gg. Asuransi)</p>
+        <p>Jam buka: 07.00 – 23.00 WIB</p>
+        <p>Find us on Instagram <a href="https://instagram.com/spaceforeveryone_" target="_blank" rel="noopener noreferrer" class="text-[#f1ede6] hover:underline flex items-center space-x-2">
+          <i class="fab fa-instagram"></i><span>@spaceforeveryone_</span></a></p>
+      </div>
+      <div class="w-full md:w-1/2 h-48 rounded overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1234567890123!2d109.3212817!3d-0.048104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d593a0d000677%3A0x976b66877073508b!2sEveryone%20Fruit%20Bar!5e0!3m2!1sen!2sid!4v1680000000000!5m2!1sen!2sid"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Everyone Fruit Bar Location"
+        ></iframe>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(event, tabName) {
+      const tabs = document.querySelectorAll('[role="tab"]');
+      const panels = document.querySelectorAll('[role="tabpanel"]');
+
+      tabs.forEach((tab) => {
+        tab.setAttribute('aria-selected', 'false');
+        tab.classList.remove('border-[#381b0f]', 'text-[#381b0f]');
+        tab.classList.add('border-transparent', 'text-gray-500');
+      });
+
+      panels.forEach((panel) => {
+        panel.classList.add('hidden');
+      });
+
+      const selectedTab = event.currentTarget;
+      selectedTab.setAttribute('aria-selected', 'true');
+      selectedTab.classList.remove('border-transparent', 'text-gray-500');
+      selectedTab.classList.add('border-[#381b0f]', 'text-[#381b0f]');
+
+      const selectedPanel = document.getElementById('panel-' + tabName);
+      selectedPanel.classList.remove('hidden');
+    }
+
+    // Reservation form handler
+    function handleReservation(event) {
+      event.preventDefault();
+      alert('Terima kasih atas reservasi Anda! Kami akan menghubungi Anda segera.');
+      event.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
